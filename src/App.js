@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import NavContainer from './NavContainer';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Home from './NavList/Home';
+import Category from './NavList/Category';
+import Products from './NavList/Products';
+import AdminArea,{fakeAuth} from './NavList/AdminArea';
+import Admin from './NavList/Admin';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        
+        <NavContainer/>
+        
+        <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/Category" component={Category}/>
+            <Route path="/Products" component={Products}/>
+            <Route path="/AdminArea" component={AdminArea}/>
+            <Admin authentification ={fakeAuth.isAuthenticated} path="/admin" component={Admin}/>
+          </Switch>
+          
+      </BrowserRouter>
+
     </div>
   );
 }

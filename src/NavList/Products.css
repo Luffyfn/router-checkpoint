@@ -1,0 +1,19 @@
+.container{
+    display: flex; 
+    justify-content: space-between; 
+    width: 85%;
+}
+
+.container .title{
+    background-color: #dce4e4;
+}
+
+.container .routes{
+    margin-top: 30px;
+}
+
+.container .routes h5{
+    position: relative; 
+    top: -20px;
+    right: 200px;
+} 
