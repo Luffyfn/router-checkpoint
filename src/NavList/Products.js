@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './Product';
 import {Nav} from 'react-bootstrap';
 import {Route} from 'react-router-dom';
-import './Products.css'
+import './Style/Products.css'
 
 function Products({match}) {
     

@@ -1,26 +1,15 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import {Nav} from 'react-bootstrap';
+import {Route, Link} from 'react-router-dom';
+import './Style/Category.css';
 
 const Category = ({ match }) => {
     return( 
-        <div> 
-            <Nav variant="pills" defaultActiveKey="/Category">
-                <Nav className="mr-auto" style={{paddingLeft: 80}}>
-                    <Nav.Item>
-                        <Nav.Link href={`${match.url}/Shoes`} eventKey={`${match.url}/Shoes`}>Shoes</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>   
-                        <Nav.Link href={`${match.url}/Boots`} eventKey={`${match.url}/Boots`}>Boots</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href={`${match.url}/Footwear`} eventKey={`${match.url}/Footwear`}>Footwear</Nav.Link>
-                    </Nav.Item>
-                </Nav>
+        <div className="container-category"> 
+            <Link className="link-category" to={`${match.url}/Shoes`}>Shoes</Link>
+            <Link className="link-category" to={`${match.url}/Boots`}>Boots</Link>
+            <Link className="link-category" to={`${match.url}/Footwear`}>Footwear</Link>
 
-            </Nav>
-
-            <Route path={`${match.path}/:name`} render= {({match}) =>( <div> <h3> {match.params.name} </h3></div>)}/>
+            <Route path={`${match.path}/:name`} render= {({match}) =>( <div> <h3> {match.params.name}</h3></div>)}/>
         </div>
     )
 }

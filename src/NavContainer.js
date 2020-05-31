@@ -1,24 +1,14 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Nav} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import './NavList/Style/NavContainer.css';
 
 function NavContainer() {
     return (
-            <div>
-                <Nav variant="pills">
-                    <Nav.Item>
-                        <Nav.Link href="/" eventKey="/Home">Home</Nav.Link>
-                    </Nav.Item> 
-                    <Nav.Item>
-                        <Nav.Link href="/Category" eventKey="/Category">Category</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/Products" eventKey="/Products">Products</Nav.Link>
-                    </Nav.Item> 
-                    <Nav.Item>
-                        <Nav.Link href="/AdminArea" eventKey="/AdminArea">Admin area</Nav.Link>
-                    </Nav.Item>      
-                </Nav>
+            <div className="container-navContainer">
+                <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/Category">Category</Link>
+                <Link className="link" to="/Products">Products</Link>
+                <Link className="link" to="/AdminArea">Admin area</Link>   
             </div>      
     )
 }
