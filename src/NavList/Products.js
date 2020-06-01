@@ -1,7 +1,6 @@
 import React from 'react';
 import Product from './Product';
-import {Nav} from 'react-bootstrap';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import './Style/Products.css'
 
 function Products({match}) {
@@ -37,9 +36,7 @@ function Products({match}) {
 
     var linkList = productsData.map((product) => {
         return(
-            <Nav.Item key = {product.id}>
-                <Nav.Link href={`${match.url}/${product.id}`}>{product.name}</Nav.Link>
-            </Nav.Item>
+                <Link className="products-link" to={`${match.url}/${product.id}`}>{product.name}</Link>    
         )
     })
 
